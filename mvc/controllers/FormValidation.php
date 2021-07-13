@@ -26,14 +26,13 @@ class FormValidation extends Controller
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);
-        $specialChars = preg_match('/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $password);
 
         if (empty($password)) {
             $passwordError = "Password can not be empty.";
         } else if (strlen($password) < 6) {
             $passwordError = "Your password must contain at least 6 characters.";
-        } else if(!$uppercase || !$lowercase || !$number || !$specialChars) {
-            $passwordError = "Your password should include at least one upper case letter, one number, and one special character.";
+        } else if(!$uppercase || !$lowercase || !$number) {
+            $passwordError = "Your password should include at least one upper case letter, one lower case and one number";
         }
         echo $passwordError;
     }

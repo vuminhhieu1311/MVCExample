@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .header, .footer {
+        .header,
+        .footer {
             background-color: linen;
             height: 100px;
         }
@@ -20,7 +21,7 @@
     </div>
     <div class="content">
         <?php
-        require_once "./mvc/views/pages/" . $data['Page'] . ".php";
+        require_once "./mvc/views/components/" . $data['Page'] . ".php";
         ?>
     </div>
     <div class="footer"></div>
