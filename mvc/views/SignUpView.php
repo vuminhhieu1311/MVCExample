@@ -64,7 +64,7 @@
                                         <p style="color: #CD113B" id="confirm_error"></p>
                                     </div>
                                     <div class="form-group m-t-20">
-                                        <button type="submit" class="btn btn-gradient-success btn-block btn-lg">Create New Account</button>
+                                        <button type="submit" name="signup" class="btn btn-gradient-success btn-block btn-lg">Create New Account</button>
                                     </div>
                                 </form>
                                 <p>Already have an account? <a href="http://localhost/MVCExample/Login">Sign In</a></p>

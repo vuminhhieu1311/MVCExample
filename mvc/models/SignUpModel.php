@@ -10,18 +10,20 @@ class SignUpModel extends Database
 
     public function submit()
     {
-        if (isset($_POST['login'])) {
-            $email = $_POST['email'];
-            $password = md5($_POST['password']);
+        if (isset($_POST['signup'])) {
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $password = md5(mysqli_real_escape_string($this->connect, $_POST['password']));
+            $userId = md5($email);
 
-            // Khi nhan nut remember me
-            if (isset($_POST['remember'])) {
-                setcookie('email', $email);
-                setcookie('password', $_POST['password']);
+            $sql = "INSERT INTO users(id, email, password) VALUES (?, ?, ?)";
+            $stmt = mysqli_stmt_init($this->connect);
+            if(!mysqli_stmt_prepare($stmt, $sql)) {
+                echo "SQL Error!";
+            } else {
+                mysqli_stmt_bind_param($stmt, "sss", $userId, $email, $password);
+                mysqli_stmt_execute($stmt);
+                return true;
             }
-
-            $sql = "SELECT * FROM users WHERE Email = '$email' AND Password = '$password'";
-            return mysqli_query($this->connect, $sql);
         }
     }
 }
