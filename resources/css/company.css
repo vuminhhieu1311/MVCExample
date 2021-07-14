@@ -16,7 +16,6 @@ main{
 }
 
 #main-content{
-    margin-top: 0;
     height: auto;
     display: flex;
     flex-direction: column;

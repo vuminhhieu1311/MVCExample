@@ -1,5 +1,6 @@
 <?php
-$RESOURCE_URL = '/MVCExample/resources'; ?>
+require_once("mvc/core/ResourceFile.php")
+?>
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" href="<?= $RESOURCE_URL ?>/assets/images/logo/apple-touch-icon.html">

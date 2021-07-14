@@ -13,13 +13,13 @@ class App
         require_once("AuthCookieSessionValidate.php");
 
         if(isset($arr[0]) && $arr[0] == "SignUp") {
-            $this->controller = "SignUp";
+            $this->controller = $arr[0];
             require_once("./mvc/controllers/" . $this->controller . ".php");
             $this->controller = new $this->controller;
         }
 
         // Neu chua login
-        else if (!$isAuthenticated) { 
+        else if (!$isAuthenticated && $arr[0] != "FormValidation") { 
             $this->controller = "Login";
             require_once("./mvc/controllers/" . $this->controller . ".php");
             $this->controller = new $this->controller;

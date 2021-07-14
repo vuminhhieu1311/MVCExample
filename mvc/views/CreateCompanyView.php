@@ -1,3 +1,7 @@
+<?php
+require_once("mvc/core/ResourceFile.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +12,9 @@
 
     <title>JobsGo - Create Company</title>
     <?php
-    require_once "./mvc/views/components/CssLink.php";
+    require_once "mvc/views/components/CssLink.php";
     ?>
-    <link rel="stylesheet" href="resources/css/create-company.css">
+    <link rel="stylesheet" href="<?= $RESOURCE_URL ?>/css/create-company.css">
 </head>
 
 <body>
@@ -54,11 +58,11 @@
         <div id="main__right">
             <div class="main-content-div" id="basic-info-div">
                 <div id="background-avatar">
-                    <img src="resources/images/img-29.jpg" style="height: 200px;width: 100%;">
+                    <img src="<?= $RESOURCE_URL ?>/images/img-29.jpg" style="height: 200px;width: 100%;">
                 </div>
 
                 <div id="main-avatar">
-                    <img src="resources/images/img-40.jpg" style="height: 90px;width: 90px;">
+                    <img src="<?= $RESOURCE_URL ?>/images/img-40.jpg" style="height: 90px;width: 90px;">
                 </div>
 
                 <div id="info">

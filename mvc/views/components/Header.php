@@ -283,7 +283,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="Logout">
                             <i class="ti-power-off p-r-10"></i>
                             <span>Logout</span>
                         </a>

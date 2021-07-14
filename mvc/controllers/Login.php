@@ -15,7 +15,7 @@ class Login extends Controller
                 setcookie('token', $token, time() + (86400 * 30)); // 1 day
             }
 
-            header("location: Home");
+            header("location: Company");
         }
 
         // View

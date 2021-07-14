@@ -15,5 +15,3 @@ if (mysqli_num_rows($result) == 1) {
     $_SESSION['login'] = $token;
     $isAuthenticated =true;
 }
-
-var_dump($isAuthenticated);

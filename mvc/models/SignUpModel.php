@@ -11,7 +11,7 @@ class SignUpModel extends Database
     public function submit()
     {
         if (isset($_POST['signup'])) {
-            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
             $password = md5(mysqli_real_escape_string($this->connect, $_POST['password']));
             $userId = md5($email);
 

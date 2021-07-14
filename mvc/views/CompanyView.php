@@ -1,3 +1,7 @@
+<?php
+require_once("mvc/core/ResourceFile.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,29 +9,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/company.css">
+    <?php
+    require_once "mvc/views/components/CssLink.php";
+    ?>
+    <link rel="stylesheet" href="<?= $RESOURCE_URL ?>/css/company.css">
     <script src="https://kit.fontawesome.com/9b7bd019f1.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <main class="main">
+    <?php
+    require_once "./mvc/views/components/Header.php";
+    ?>
+    <main class="main" style="padding-top: 65px">
         <main>
             <div id="main-content">
                 <div class="main-content-div" id="basic-info-div">
                     <div id="background-avatar">
-                        <img src="resources/images/img-29.jpg">
+                        <img src="<?= $RESOURCE_URL ?>/images/img-29.jpg">
                     </div>
 
                     <div id="main-avatar">
-                        <img src="resources/images/img-40.jpg">
+                        <img src="<?= $RESOURCE_URL ?>/images/img-40.jpg">
                         <a class="edit-company" href=""><i class="fas fa-pencil-alt"></i></a>
                     </div>
 
 
                     <div id="info">
                         <div id="company-info">
-                            <h1>Sun Asterisk</h1>
+                            <h1 style="font-weight:bold;">Sun Asterisk</h1>
                             <p>For a better world</p>
                             <span>Ha Noi</span>
                             <span>Followers</span>
@@ -47,7 +57,7 @@
                 </div>
 
                 <div class="main-content-div" id="about">
-                    <h2>About</h2>
+                    <h2 style="font-weight:bold;">About</h2>
                     <div id="about__detail">
                         <div id="about__detail__overview">
                             <h3>Overview</h3>
@@ -94,7 +104,7 @@
                 </div>
 
                 <div class="main-content-div" id="post">
-                    <h2>Jobs</h2>
+                    <h2 style="font-weight:bold;">Jobs</h2>
                     <div id="page-post">
 
                     </div>
@@ -103,21 +113,21 @@
 
         <div class="main__content ads">
             <div class="quote" style="margin-top: -8%">
-                <img src="resources/images/background_footer.jpeg" style="height: 100%;width: 100%; border-radius: 10px;">
+                <img src="<?= $RESOURCE_URL ?>/images/background_footer.jpeg" style="height: 100%;width: 100%; border-radius: 10px;">
             </div>
             <div class="suggest">
                 <h3 Companies class="suggest__title">Companies</h3>
 
                 <a class="suggest__link" href="">
                     <div class="suggest__info">
-                        <img class="suggest__info__avatar" src="resources/images/img-40.jpg">
+                        <img class="suggest__info__avatar" src="<?= $RESOURCE_URL ?>/images/img-40.jpg">
                         <h4 class="suggest__info__name">FPT Software</h4>
                     </div>
                 </a>
 
                 <a class="suggest__link" href="">
                     <div class="suggest__info">
-                        <img class="suggest__info__avatar" src="resources/images/img-40.jpg">
+                        <img class="suggest__info__avatar" src="<?= $RESOURCE_URL ?>/images/img-40.jpg">
                         <h4 class="suggest__info__name">FPT Software</h4>
                     </div>
                 </a>
