@@ -69,4 +69,14 @@ class CompanyModel
 
         return $statement->affected_rows;
     }
+
+    public function deleteCompany(int $companyId): int
+    {
+        $query = 'delete from companies where id = ?';
+        $statement = $this->connection->prepare($query);
+        $statement->bind_param('i', $companyId);
+        $statement->execute();
+
+        return $statement->affected_rows;
+    }
 }
