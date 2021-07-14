@@ -5,13 +5,17 @@ class Login extends Controller
     {
         // Model
         $login = $this->model("LoginModel"); // tao doi tuong login
-        $result = $login->check_login();
-        if ($result) {
-            $row = mysqli_fetch_row($result);
-            if ($row && count($row)) {
-                $_SESSION['login'] = $row;
-                header("location: Home");
+
+        $token = $login->check_login();
+        if ($token != "") {
+            $_SESSION['login'] = $token;
+
+            // Set cookie (remember me)
+            if (isset($_POST['remember'])) {
+                setcookie('token', $token, time() + (86400 * 30)); // 1 day
             }
+
+            header("location: Home");
         }
 
         // View

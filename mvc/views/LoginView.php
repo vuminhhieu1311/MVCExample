@@ -34,13 +34,13 @@
                                     <p class="m-b-15 font-size-13">Please enter your user name and password to login</p>
                                     <form method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo (isset($_COOKIE['email']) ? $_COOKIE['email'] : '') ?>">
+                                            <input type="email" class="form-control" placeholder="Email" name="email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo (isset($_COOKIE['password']) ? $_COOKIE['password'] : '') ?>">
+                                            <input type="password" class="form-control" placeholder="Password" name="password">
                                         </div>
                                         <div class="form-check">
-                                            <input <?php echo (isset($_COOKIE['email'])) ? 'checked' : '' ?> class="form-check-input" type="checkbox" value="1" name="remember">
+                                            <input <?php echo (isset($_COOKIE['token'])) ? 'checked' : '' ?> class="form-check-input" type="checkbox" value="1" name="remember">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Remember me
                                             </label>

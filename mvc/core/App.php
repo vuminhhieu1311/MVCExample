@@ -9,13 +9,17 @@ class App
     {
         $arr = $this->url_process(); // Xu ly URL cua nguoi dung nhap vao
 
+        $isAuthenticated = false;
+        require_once("AuthCookieSessionValidate.php");
+
         if(isset($arr[0]) && $arr[0] == "SignUp") {
             $this->controller = "SignUp";
             require_once("./mvc/controllers/" . $this->controller . ".php");
             $this->controller = new $this->controller;
-        } 
+        }
+
         // Neu chua login
-        else if (!isset($_SESSION['login'])) { 
+        else if (!$isAuthenticated) { 
             $this->controller = "Login";
             require_once("./mvc/controllers/" . $this->controller . ".php");
             $this->controller = new $this->controller;

@@ -19,4 +19,3 @@
             $this->connect->close();
         }
     }
-?>
