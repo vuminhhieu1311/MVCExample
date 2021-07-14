@@ -13,7 +13,7 @@ $RESOURCE_URL = '/MVCExample/resources'; ?>
 <!-- page css -->
 
 <!-- core css -->
-<link href="<?= $RESOURCE_URL ?>/assets/css/font-awesome.min.css" rel="stylesheet">
+<!-- <link href="<?= $RESOURCE_URL ?>/assets/css/font&#45;awesome.min.css" rel="stylesheet"> -->
 <link href="<?= $RESOURCE_URL ?>/assets/css/themify-icons.css" rel="stylesheet">
 <link href="<?= $RESOURCE_URL ?>/assets/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="<?= $RESOURCE_URL ?>/assets/css/animate.min.css" rel="stylesheet">
@@ -26,3 +26,4 @@ $RESOURCE_URL = '/MVCExample/resources'; ?>
 <!-- page js -->
 <script src="<?= $RESOURCE_URL ?>/assets/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="<?= $RESOURCE_URL ?>/assets/js/dashboard/bank.js"></script>
+<script src="https://kit.fontawesome.com/5f35b52da0.js" crossorigin="anonymous"></script>
