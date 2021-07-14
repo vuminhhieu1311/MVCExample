@@ -1,0 +1,82 @@
+main {
+  padding-top: 65px;
+}
+
+ul.company-list {
+  list-style: none;
+  padding: 0 25%;
+}
+
+ul.company-list > li.company {
+  position: relative;
+  height: 10em;
+  padding: 0 2em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ul.company-list > li.company:nth-child(even) {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.company-logo {
+  width: 6em;
+  height: 6em;
+}
+
+.company-logo > img {
+  width: 100%;
+  height: 100%;
+}
+
+.company-info {
+  padding-left: 2em;
+  margin-right: 14em;
+}
+
+.company-info > .company-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.company-info > .company-website {
+  color: hsl(220, 100%, 50%);
+}
+
+.company > .admin-action {
+  position: absolute;
+  right: 2em;
+}
+
+.admin-action > button {
+  margin-left: 1em;
+}
+
+button {
+  --background-color: hsl(0, 100%, 100%);
+  --background-color: hsl(0, 100%, 0%);
+
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+
+  border: none;
+  border-radius: 100em;
+
+  padding: 0.35em 1em;
+}
+
+button.button-edit {
+  --background-color: hsl(220, 100%, 60%);
+  --foreground-color: hsl(0, 100%, 100%);
+}
+
+button.button-delete {
+  --background-color: hsl(0, 100%, 60%);
+  --foreground-color: hsl(0, 100%, 100%);
+}
+
+button > i {
+  margin-left: 0.5em;
+}

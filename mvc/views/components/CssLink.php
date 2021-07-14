@@ -27,3 +27,4 @@ require_once("mvc/core/ResourceFile.php")
 <!-- page js -->
 <script src="<?= $RESOURCE_URL ?>/assets/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="<?= $RESOURCE_URL ?>/assets/js/dashboard/bank.js"></script>
+<script src="https://kit.fontawesome.com/5f35b52da0.js" crossorigin="anonymous"></script>
