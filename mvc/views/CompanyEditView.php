@@ -26,14 +26,18 @@ $errorMessages = $form->getErrorMessages();
             <div id="main__basic__info">
                 <h2>Edit Company</h2>
                 <form id="main__basic__info__form" method="post">
-                    <input type="hidden" name="company_id" value="<?= $form->companyId() ?>">
+                    <input 
+                        type="hidden" 
+                        name="company_id" 
+                        value="<?= htmlspecialchars($form->companyId()) ?>"
+                    >
                     <label for="name">Name *</label></br>
                     <input 
                         class="text-input" 
                         type="text" 
                         id="name" 
                         name="name" 
-                        value="<?= $form->name() ?>"
+                        value="<?= htmlspecialchars($form->name()) ?>"
                         required
                     >
                     </br>
@@ -43,7 +47,7 @@ $errorMessages = $form->getErrorMessages();
                         type="url" 
                         id="website" 
                         name="website" 
-                        value="<?= $form->website() ?>"
+                        value="<?= htmlspecialchars($form->website()) ?>"
                     >
                     </br>
                     <label for="industry">Industry</label></br>
@@ -52,7 +56,7 @@ $errorMessages = $form->getErrorMessages();
                         type="text" 
                         id="industry" 
                         name="industry" 
-                        value="<?= $form->industry() ?>"
+                        value="<?= htmlspecialchars($form->industry()) ?>"
                     >
                     </br>
                     <label for="companySize">Company size</label></br>
@@ -61,7 +65,7 @@ $errorMessages = $form->getErrorMessages();
                         type="text" 
                         id="companySize" 
                         name="company_size" 
-                        value="<?= $form->companySize() ?>"
+                        value="<?= htmlspecialchars($form->companySize()) ?>"
                     >
                     </br>
                     <label for="companyType">Company type</label></br>
@@ -70,7 +74,7 @@ $errorMessages = $form->getErrorMessages();
                         type="text" 
                         id="companyType" 
                         name="company_type" 
-                        value="<?= $form->companyType() ?>"
+                        value="<?= htmlspecialchars($form->companyType()) ?>"
                     >
                     </br>
                     <label for="tagLine">Tag line</label></br>
@@ -79,7 +83,7 @@ $errorMessages = $form->getErrorMessages();
                         type="text" 
                         id="tagLine" 
                         name="tagline"
-                        value="<?= $form->tagline() ?>"
+                        value="<?= htmlspecialchars($form->tagline()) ?>"
                     >
                     </br>
                     <!-- <label for="logo">Logo *</label></br> -->
