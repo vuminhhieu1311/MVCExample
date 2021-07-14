@@ -11,10 +11,12 @@ class Company extends Controller
         $this->companyModel = $this->model('CompanyModel');
     }
 
-    public function detail()
+    public function detail($companyId)
     {
-        // View
-        $this->view('CompanyView', []);
+        $company = $this->companyModel->getCompanyById($companyId);
+        $companies = $this->companyModel->getAllCompanies();
+
+        $this->view('CompanyView', ['company' => $company, 'companies' => $companies]);
     }
 
     public function edit($param)
@@ -63,14 +65,17 @@ class Company extends Controller
         $this->view('CompanyEditView', $data);
     }
 
-    public function delete()
+    public function delete($companyId)
     {
         if (
-            $_SERVER['REQUEST_METHOD'] === 'POST' &&
-            isset($_POST['company_id']) &&
-            filter_input(INPUT_POST, 'company_id', FILTER_VALIDATE_INT)
+            filter_var($companyId, FILTER_VALIDATE_INT) === 0 ||
+            !filter_var($companyId, FILTER_VALIDATE_INT) === false
         ) {
-            $this->companyModel->deleteCompany($_POST['company_id']);
+
+            $result = $this->companyModel->deleteCompany($companyId);
+            if($result === 1) {
+                header("location: /MVCExample/CompanyList");
+            }
         }
     }
 }

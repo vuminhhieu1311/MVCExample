@@ -1,5 +1,6 @@
 <?php
-require_once("mvc/core/ResourceFile.php")
+require_once("./mvc/core/ResourceFile.php");
+$company = $data['company'];
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,7 @@ require_once("mvc/core/ResourceFile.php")
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    require_once "mvc/views/components/CssLink.php";
+    require_once "./mvc/views/components/CssLink.php";
     ?>
     <link rel="stylesheet" href="<?= $RESOURCE_URL ?>/css/company.css">
     <script src="https://kit.fontawesome.com/9b7bd019f1.js" crossorigin="anonymous"></script>
@@ -26,27 +27,26 @@ require_once("mvc/core/ResourceFile.php")
             <div id="main-content">
                 <div class="main-content-div" id="basic-info-div">
                     <div id="background-avatar">
-                        <img src="<?= $RESOURCE_URL ?>/images/img-29.jpg">
+                        <img src="<?php _url($company['bg_image_url']) ?>">
                     </div>
 
                     <div id="main-avatar">
-                        <img src="<?= $RESOURCE_URL ?>/images/img-40.jpg">
-                        <a class="edit-company" href=""><i class="fas fa-pencil-alt"></i></a>
+                        <img src="<?php _url($company['logo_url']) ?>">
+                        <a class="edit-company" href="/MVCExample/Company/edit/<?= _e($company['id']) ?>"><i class="fas fa-pencil-alt"></i></a>
                     </div>
 
 
                     <div id="info">
                         <div id="company-info">
-                            <h1 style="font-weight:bold;">Sun Asterisk</h1>
-                            <p>For a better world</p>
-                            <span>Ha Noi</span>
-                            <span>Followers</span>
-                            <span>1000 Employees</span>
+                            <h1 style="font-weight:bold;"><?php _e($company['name']) ?></h1>
+                            <p><?php _e($company['tagline']) ?></p>
+                            <span>Viet Nam</span>
+                            <span><?php _e($company['company_size']) ?> Employees</span>
                         </div>
                     </div>
 
-                    <div id="basic-info-follow" @click="${this.handleToggleModal}" class="add-job">
-                        Delete Profile
+                    <div id="basic-info-follow" class="add-job">
+                        <a href="/MVCExample/Company/delete/<?= _e($company['id']) ?>" style="color:white;">Delete Profile</a>
                     </div>
 
                     <div id="basic-info-nav">
@@ -65,10 +65,7 @@ require_once("mvc/core/ResourceFile.php")
                                 notion about academic quality. In view of the varied needs
                                 and expectations of stakeholders, quality in higher education
                                 can be said to be a multi-dimensional concept which should embrace
-                                all its functions and activities. It is related to teaching and
-                                academic programs, research and scholarship, staffing, students,
-                                buildings, facilities, equipment, services to the community and
-                                the academic environment.</div>
+                                all its functions and activities.</div>
 
                         </div>
                         <div id="about__detail__specified">
@@ -76,28 +73,28 @@ require_once("mvc/core/ResourceFile.php")
                                 Website
                             </div>
                             <div class="about__detail__specified__content">
-                                <a href="">http://acb.com</a>
+                                <a href=""><?php _url($company['website']) ?></a>
                             </div>
 
                             <div class="about__detail__specified__tag">
                                 Industry
                             </div>
                             <div class="about__detail__specified__content">
-                                Technology
+                                <?php _e($company['industry']) ?>
                             </div>
 
                             <div class="about__detail__specified__tag">
                                 Company size
                             </div>
                             <div class="about__detail__specified__content">
-                                1000 employees
+                                <?php _e($company['company_size']) ?> employees
                             </div>
 
                             <div class="about__detail__specified__tag">
                                 Type
                             </div>
                             <div class="about__detail__specified__content">
-                                Government
+                                <?php _e($company['company_type']) ?>
                             </div>
                         </div>
                     </div>
@@ -118,19 +115,17 @@ require_once("mvc/core/ResourceFile.php")
             <div class="suggest">
                 <h3 Companies class="suggest__title">Companies</h3>
 
-                <a class="suggest__link" href="">
-                    <div class="suggest__info">
-                        <img class="suggest__info__avatar" src="<?= $RESOURCE_URL ?>/images/img-40.jpg">
-                        <h4 class="suggest__info__name">FPT Software</h4>
-                    </div>
-                </a>
+                <?php
+                $companies = $data['companies'];
+                foreach ($companies as $c) { ?>
+                    <a class="suggest__link" href="/MVCExample/Company/detail/<?= _e($c['id']) ?>">
+                        <div class="suggest__info">
+                            <img class="suggest__info__avatar" src="<?php _url($c['logo_url']) ?>">
+                            <h4 class="suggest__info__name"><?php _e($c['name']) ?></h4>
+                        </div>
+                    </a>
+                <?php } ?>
 
-                <a class="suggest__link" href="">
-                    <div class="suggest__info">
-                        <img class="suggest__info__avatar" src="<?= $RESOURCE_URL ?>/images/img-40.jpg">
-                        <h4 class="suggest__info__name">FPT Software</h4>
-                    </div>
-                </a>
             </div>
 
             <div class="web__info">

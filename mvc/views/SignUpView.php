@@ -7,7 +7,7 @@
     <title>Applicator - Admin Dashboard Template</title>
 
     <?php
-    require_once "./mvc/views/components/CssLink.php";
+    require_once "mvc/views/components/CssLink.php";
     ?>
 </head>
 
@@ -36,7 +36,7 @@
                                 <form method="post" action="">
                                     <div class="form-group">
                                         <label class="control-label">Email Address</label>
-                                        <input type="email" class="form-control" name="email" id="email" required>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                                         <p style="color: #CD113B" id="email_error"></p>
                                     </div>
                                     <div class="form-group">
@@ -53,7 +53,7 @@
                                         <button type="submit" name="signup" class="btn btn-gradient-success btn-block btn-lg">Create New Account</button>
                                     </div>
                                 </form>
-                                <p>Already have an account? <a href="http://localhost/MVCExample/Login">Sign In</a></p>
+                                <p>Already have an account? <a href="/MVCExample/Login">Sign In</a></p>
                                 <hr>
                                 <small>By signing up you agree to out <a href="#">Terms &amp; Policy</a></small>
                                 <div class="result"></div>
@@ -70,7 +70,7 @@
             $('#email').blur(function() {
                 var email = $(this).val();
 
-                $.post('http://localhost/MVCExample/FormValidation/check_email', {
+                $.post('/MVCExample/FormValidation/check_email', {
                     email: email
                 }, function(data) {
                     $("#email_error").html(data);
@@ -79,7 +79,7 @@
 
             $('#password').blur(function() {
                 var password = $(this).val();
-                $.post('http://localhost/MVCExample/FormValidation/check_password', {
+                $.post('/MVCExample/FormValidation/check_password', {
                     password: password
                 }, function(data) {
                     $("#password_error").html(data);
@@ -90,7 +90,7 @@
             $('#confirm_password').blur(function() {
                 var password = $('#password').val();
                 var cPassword = $(this).val();
-                $.post('http://localhost/MVCExample/FormValidation/check_confirm_password', {
+                $.post('/MVCExample/FormValidation/check_confirm_password', {
                     password: password,
                     cPassword: cPassword
                 }, function(data) {

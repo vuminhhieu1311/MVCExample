@@ -2,8 +2,8 @@
     <div class="header-container">
         <div class="nav-logo">
             <a href="index.html">
-                <div class="logo logo-dark" style="background-image: url('resources/assets/images/logo/logo.png')"></div>
-                <div class="logo logo-white" style="background-image: url('resources/assets/images/logo/logo-white.png')"></div>
+                <div class="logo logo-dark" style="background-image: url('<?= $RESOURCE_URL ?>/assets/images/logo/logo.png')"></div>
+                <div class="logo logo-white" style="background-image: url('<?= $RESOURCE_URL ?>/assets/images/logo/logo-white.png')"></div>
             </a>
         </div>
         <ul class="nav-left">
@@ -79,7 +79,7 @@
                                 <li class="list-item">
                                     <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                         <div class="media-img">
-                                            <img src="resources/assets/images/avatars/thumb-3.jpg" alt="">
+                                            <img src="<?= $RESOURCE_URL ?>/assets/images/avatars/thumb-3.jpg" alt="">
                                         </div>
                                         <div class="info">
                                             <span class="title p-t-10">Debra Stewart</span>
@@ -89,7 +89,7 @@
                                 <li class="list-item">
                                     <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                         <div class="media-img">
-                                            <img src="resources/assets/images/avatars/thumb-5.jpg" alt="">
+                                            <img src="<?= $RESOURCE_URL ?>/assets/images/avatars/thumb-5.jpg" alt="">
                                         </div>
                                         <div class="info">
                                             <span class="title p-t-10">Jane Hunt</span>
@@ -246,14 +246,14 @@
             </li>
             <li class="user-profile dropdown dropdown-animated scale-left">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img class="profile-img img-fluid" src="resources/assets/images/avatars/thumb-13.jpg" alt="">
+                    <img class="profile-img img-fluid" src="<?= $RESOURCE_URL ?>/assets/images/avatars/thumb-13.jpg" alt="">
                 </a>
                 <ul class="dropdown-menu dropdown-md p-v-0">
                     <li>
                         <ul class="list-media">
                             <li class="list-item p-15">
                                 <div class="media-img">
-                                    <img src="resources/assets/images/avatars/thumb-13.jpg" alt="">
+                                    <img src="<?= $RESOURCE_URL ?>/assets/images/avatars/thumb-13.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <span class="title text-semibold">Marshall Nichols</span>
@@ -264,15 +264,15 @@
                     </li>
                     <li role="separator" class="divider"></li>
                     <li>
-                        <a href="#">
-                            <i class="ti-settings p-r-10"></i>
-                            <span>Setting</span>
+                        <a href="/MVCExample/CompanyList">
+                            <i class="fas fa-building" style="margin-right: 12px;"></i>
+                            <span>Company List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="ti-user p-r-10"></i>
-                            <span>Profile</span>
+                        <a href="/MVCExample/CreateCompany">
+                            <i class="fas fa-plus" style="margin-right: 12px;"></i>
+                            <span>Create company</span>
                         </a>
                     </li>
                     <li>
@@ -283,7 +283,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="Logout">
+                        <a href="/MVCExample/Logout">
                             <i class="ti-power-off p-r-10"></i>
                             <span>Logout</span>
                         </a>

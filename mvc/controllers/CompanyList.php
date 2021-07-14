@@ -7,7 +7,6 @@ class CompanyList extends Controller
     public function __construct()
     {
         $this->companyModel = $this->model('CompanyModel');
-
         $companies = $this->companyModel->getAllCompanies();
 
         $this->view('CompanyListView', ['companies' => $companies]);

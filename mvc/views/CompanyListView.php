@@ -1,5 +1,6 @@
 <?php
-$RESOURCE_URL = '/MVCExample/resources'; ?>
+require_once("mvc/core/ResourceFile.php")
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ $RESOURCE_URL = '/MVCExample/resources'; ?>
 <body>
     <?php require_once './mvc/views/components/Header.php'; ?>
     <main>
-        <ul class="company-list">
+        <ul class="company-list" style="margin-left: -4%">
             <?php
             $companies = $data['companies'];
             foreach ($companies as $company) {

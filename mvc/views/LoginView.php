@@ -32,6 +32,7 @@
                                 <div class="p-h-15 p-v-40">
                                     <h2>Login</h2>
                                     <p class="m-b-15 font-size-13">Please enter your user name and password to login</p>
+                                    <p style="color: #CD113B" id="login_error"><?php if(isset($_POST['login'])) echo $data['error']; ?></p>
                                     <form method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Email" name="email">
