@@ -61,9 +61,12 @@ class CompanyCreateForm extends Form
 
     private function validateCompanySize()
     {
-        if (!filter_var($this->companySize, FILTER_VALIDATE_INT)) {
+        if (
+            $this->companySize != 0 &&
+            !filter_var($this->companySize, FILTER_VALIDATE_INT)
+        ) {
             $this->addErrorMessage(
-                'companyType',
+                'companySize',
                 'Company size should be integer.'
             );
         }
@@ -89,7 +92,7 @@ class CompanyCreateForm extends Form
         return $this->companyType;
     }
 
-    public function companySize(): int
+    public function companySize(): string
     {
         return $this->companySize;
     }

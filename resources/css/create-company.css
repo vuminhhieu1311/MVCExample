@@ -1,198 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 body {
-    background-color: whitesmoke;
-    font-family: 'Lato', sans-serif;
-    margin: 0 auto;
-    color: #2B2B2B;
-
+  background-color: whitesmoke;
+  font-family: "Lato", sans-serif;
+  margin: 0 auto;
+  color: #2b2b2b;
 }
 
 main {
-    padding-top: 65px;
-    display: flex;
-    justify-content: space-around;
+  padding-top: 65px;
+  display: flex;
+  justify-content: space-around;
 }
 
 #main__left {
-    width: 400px;
-    flex: 0 0 400px;
-    background-color: white;
-    margin: 10px 0 10px 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+  width: 400px;
+  flex: 0 0 400px;
+  background-color: white;
+  margin: 10px 0 10px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 #main__right {
-    margin: 10px;
-    width: 100%;
+  margin: 10px;
+  width: 100%;
 }
 
 #main__basic__info h2 {
-    margin: 10px;
+  margin: 10px;
+
+  text-align: center;
 }
 
 #main__basic__info__form {
-    margin: 10px;
-    border-radius: 8px;
+  margin: 10px;
+  border-radius: 8px;
 }
 
 #main__basic__info__form .text-input {
-    border: 1px solid #DDDDDD;
-    border-radius: 5px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
 }
 
 #main__basic__info__form input {
-    margin: 10px;
-    width: 360px;
-    height: 30px;
-    font-size: 14px;
-    font-weight: lighter;
-    font-family: 'Lato', sans-serif;
-    color: #5f5c5c;
-    outline: none;
+  margin: 10px;
+  width: 360px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: lighter;
+  font-family: "Lato", sans-serif;
+  color: #5f5c5c;
+  outline: none;
 }
 
 #term {
-    display: block !important;
-    height: 20px !important;
-    width: 20px !important;
-    margin: 0 10px 0 0 !important;
+  display: block !important;
+  height: 20px !important;
+  width: 20px !important;
+  margin: 0 10px 0 0 !important;
 }
 
 #term__agree {
-    display: flex;
+  display: flex;
 }
 
 #term__agree div {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 #main__basic__info__form button {
-    float: right;
-    margin: 10px;
-    border: none;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(135deg, #05bdd7 0%, #04a1f4 100%);
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
+  float: right;
+  margin: 10px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #05bdd7 0%, #04a1f4 100%);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 /*=======================================*/
 .main-content-div {
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0.2px solid #DDDDDD;
-    border-radius: 10px;
-    border-collapse: separate;
-    padding: 1px;
-    margin-bottom: 20px;
-    background-color: white;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.2px solid #dddddd;
+  border-radius: 10px;
+  border-collapse: separate;
+  padding: 1px;
+  margin-bottom: 20px;
+  background-color: white;
 }
 
-
 #background-avatar {
-    position: relative;
-    width: 100%;
-    height: 210px;
-    background-color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  position: relative;
+  width: 100%;
+  height: 210px;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 #background-avatar img {
-    display: block;
-    width: 100%;
-    height: 200px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  display: block;
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-
 #main-avatar {
-    margin-top: -50px;
-    background-color: transparent;
-    position: relative;
-    padding: 5px;
+  margin-top: -50px;
+  background-color: transparent;
+  position: relative;
+  padding: 5px;
 }
 
 #main-avatar img {
-    display: block;
-    background-color: white;
-    border-radius: 50%;
-    margin-left: 20px;
+  display: block;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 20px;
 }
 
-
 #info {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    display: flex;
-    margin-top: 10px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  margin-top: 10px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 #info div {
-    width: 50%;
-    padding: 0 20px;
+  width: 50%;
+  padding: 0 20px;
 }
 
 #basic-info-follow {
-    background: linear-gradient(135deg, #05bdd7 0%, #04a1f4 100%);
-    width: 100px;
-    text-align: center;
-    padding: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(245, 245, 245);
-    border-radius: 30px;
-    margin: 10px;
-    cursor: pointer;
+  background: linear-gradient(135deg, #05bdd7 0%, #04a1f4 100%);
+  width: 100px;
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(245, 245, 245);
+  border-radius: 30px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 #basic-info-follow i {
-    margin-right: 5px;
-    font-size: 15px;
+  margin-right: 5px;
+  font-size: 15px;
 }
 
 #basic-info-nav {
-    display: flex;
-    flex-wrap: wrap;
-    border-top: 0.2px solid #DDDDDD;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 0.2px solid #dddddd;
 }
 
 #basic-info-nav a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 #basic-info-nav div {
-    margin: 10px 20px 10px 20px;
-    font-weight: bold;
+  margin: 10px 20px 10px 20px;
+  font-weight: bold;
 }
 
 #basic-info-nav a:hover {
-    color: royalblue;
-    border-bottom: 2px solid royalblue;
-    cursor: pointer;
+  color: royalblue;
+  border-bottom: 2px solid royalblue;
+  cursor: pointer;
 }
 
-
 #company-info {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 #company-info span {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #company-info a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
+}
+
+.error-message {
+  color: hsl(0, 100%, 60%);
+}
+
+h5.success-message {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+
+  background-color: hsl(120, 100%, 70%);
+  color: hsl(0, 100%, 0%);
+
+  border-bottom: 5px solid hsl(120, 100%, 35%);
+  border-radius: 0.25em;
+
+  padding: 0.5em 1em;
+  margin: 0.5em 4em;
 }

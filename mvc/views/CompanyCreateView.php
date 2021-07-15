@@ -1,6 +1,20 @@
 <?php
 $RESOURCE_URI = '/MVCExample/resources';
+if (isset($data['successMessage'])) {
+    $successMessage = $data['successMessage'];
+}
+
 $form = $data['form'];
+$errorMessages = $form->getErrorMessages();
+if (isset($errorMessages['name'])) {
+    $companyNameErrors = $errorMessages['name'];
+}
+if (isset($errorMessages['website'])) {
+    $companyWebsiteErrors = $errorMessages['website'];
+}
+if (isset($errorMessages['companySize'])) {
+    $companySizeErrors = $errorMessages['companySize'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +37,11 @@ $form = $data['form'];
         <div id="main__left">
             <div id="main__basic__info">
                 <h2>Create Company</h2>
+                <?php if (isset($data['successMessage'])) { ?>
+                    <h5 class="success-message">
+                        <?= $data['successMessage'] ?>
+                    </h5>
+                <?php } ?>
                 <form id="main__basic__info__form" method="post">
                     <label for="name">Name *</label></br>
                     <input 
@@ -34,6 +53,11 @@ $form = $data['form'];
                         required
                     >
                     </br>
+                    <?php foreach ($companyNameErrors as $errorMessage) { ?>
+                        <div class="error-message">
+                            <?= htmlspecialchars($errorMessage) ?>
+                        </div>
+                    <?php } ?>
                     <label for="website">Website</label></br>
                     <input 
                         class="text-input" 
@@ -43,6 +67,11 @@ $form = $data['form'];
                         value="<?= htmlspecialchars($form->website()) ?>"
                     >
                     </br>
+                    <?php foreach ($companyWebsiteErrors as $errorMessage) { ?>
+                        <div class="error-message">
+                            <?= htmlspecialchars($errorMessage) ?>
+                        </div>
+                    <?php } ?>
                     <label for="industry">Industry</label></br>
                     <input 
                         class="text-input" 
@@ -60,6 +89,11 @@ $form = $data['form'];
                         name="company_size" 
                         value="<?= htmlspecialchars($form->companySize()) ?>"
                     >
+                    <?php foreach ($companySizeErrors as $errorMessage) { ?>
+                        <div class="error-message">
+                            <?= htmlspecialchars($errorMessage) ?>
+                        </div>
+                    <?php } ?>
                     </br>
                     <label for="companyType">Company type</label></br>
                     <input 
@@ -80,6 +114,7 @@ $form = $data['form'];
                     >
                     </br>
                     <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
                 </form>
                 <div id="filter__jobtitle">
                 </div>

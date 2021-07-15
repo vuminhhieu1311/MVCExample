@@ -3,6 +3,7 @@ $RESOURCE_URL = '/MVCExample/resources';
 
 $form = $data['form'];
 $errorMessages = $form->getErrorMessages();
+var_dump($form);
 ?>
 
 <!DOCTYPE html>
