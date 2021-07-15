@@ -7,15 +7,13 @@ class CompanyEditForm extends CompanyCreateForm
     private $companyId;
 
     public function __construct(
-        int $companyId,
-        string $name = '',
-        string $website = '',
-        string $industry = '',
-        int $companySize = 0,
-        string $companyType = '',
-        // string $logoUrl = '',
-        // string $bgImageUrl = '',
-        string $tagline = ''
+        $companyId,
+        $name = '',
+        $website = '',
+        $industry = '',
+        $companySize = 0,
+        $companyType = '',
+        $tagline = ''
     ) {
         parent::__construct(
             $name,

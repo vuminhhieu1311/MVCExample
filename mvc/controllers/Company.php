@@ -98,6 +98,7 @@ class Company extends Controller
                     $form->companyType(),
                     $form->tagline()
                 );
+                $data['successMessage'] = 'Company updated successfully!';
             }
         }
 
