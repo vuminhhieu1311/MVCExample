@@ -1,5 +1,6 @@
 <?php
 
+require_once './mvc/forms/CompanyCreateForm.php';
 require_once './mvc/forms/CompanyEditForm.php';
 
 class Company extends Controller
@@ -16,7 +17,45 @@ class Company extends Controller
         $company = $this->companyModel->getCompanyById($companyId);
         $companies = $this->companyModel->getAllCompanies();
 
-        $this->view('CompanyView', ['company' => $company, 'companies' => $companies]);
+        $this->view('CompanyView', [
+            'company' => $company,
+            'companies' => $companies,
+        ]);
+    }
+
+    public function create()
+    {
+        $form = null;
+        $data = [];
+
+        $requestMethod = $_SERVER['REQUEST_METHOD'];
+        if ($requestMethod === 'POST') {
+            $form = new CompanyCreateForm(
+                $_POST['name'],
+                $_POST['website'],
+                $_POST['industry'],
+                $_POST['company_size'],
+                $_POST['company_type'],
+                $_POST['tagline']
+            );
+            if ($form->isValid()) {
+                $this->companyModel->createCompany(
+                    $form->name(),
+                    $form->website(),
+                    $form->industry(),
+                    $form->companySize(),
+                    $form->companyType(),
+                    $form->tagline()
+                );
+            }
+        }
+
+        if ($form === null) {
+            $form = new CompanyCreateForm();
+        }
+
+        $data['form'] = $form;
+        $this->view('CompanyCreateView', $data);
     }
 
     public function edit($param)
@@ -71,10 +110,9 @@ class Company extends Controller
             filter_var($companyId, FILTER_VALIDATE_INT) === 0 ||
             !filter_var($companyId, FILTER_VALIDATE_INT) === false
         ) {
-
             $result = $this->companyModel->deleteCompany($companyId);
-            if($result === 1) {
-                header("location: /MVCExample/CompanyList");
+            if ($result === 1) {
+                header('location: /MVCExample/CompanyList');
             }
         }
     }

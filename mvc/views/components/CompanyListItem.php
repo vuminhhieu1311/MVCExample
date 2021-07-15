@@ -1,4 +1,4 @@
-<li class="company" style="width: 550px">
+<li class="company">
     <a href="Company/detail/<?= _e($company['id']) ?>">
         <div class="company-logo">
             <img src="<?= _e($company['logo_url']) ?>" alt="logo">
@@ -21,11 +21,11 @@
                 <i class="far fa-edit"></i>
             </button>
         </a>
-        <button class="button-delete">
-            <a href="/MVCExample/Company/delete/<?= _e($company['id']) ?>" style="text-decoration:none;color:white;">
+        <a href="/MVCExample/Company/delete/<?= _e($company['id']) ?>">
+            <button class="button-delete">
                 Delete
                 <i class="far fa-trash-alt"></i>
-            </a>
-        </button>
+            </button>
+        </a>
     </div>
 </li>

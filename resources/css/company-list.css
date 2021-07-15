@@ -18,7 +18,7 @@ ul.company-list > li.company {
 }
 
 ul.company-list > li.company:nth-child(even) {
-  background-color: hsl(0, 0%, 95%);
+  background-color: hsl(0, 0%, 90%);
 }
 
 .company-logo {
@@ -36,21 +36,26 @@ ul.company-list > li.company:nth-child(even) {
   margin-right: 14em;
 }
 
-.company-info > .company-name {
+.company-info .company-name {
   font-size: 1.5em;
   font-weight: bold;
+
+  color: hsl(0, 0%, 10%);
 }
 
-.company-info > .company-website {
+.company-info .company-website {
   color: hsl(220, 100%, 50%);
 }
 
 .company > .admin-action {
   position: absolute;
   right: 2em;
+
+  display: flex;
+  flex-direction: row;
 }
 
-.admin-action > button {
+.admin-action button {
   margin-left: 1em;
 }
 
