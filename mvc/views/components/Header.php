@@ -270,7 +270,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/MVCExample/CreateCompany">
+                        <a href="/MVCExample/Company/create">
                             <i class="fas fa-plus" style="margin-right: 12px;"></i>
                             <span>Create company</span>
                         </a>

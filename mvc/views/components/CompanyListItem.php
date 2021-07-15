@@ -1,7 +1,12 @@
 <li class="company">
     <a href="Company/detail/<?= _e($company['id']) ?>">
         <div class="company-logo">
-            <img src="<?= _e($company['logo_url']) ?>" alt="logo">
+            <img src="<?php if (isset($company['logo_url'])) {
+                            _url($company['logo_url']);
+                        } else {
+                            echo $RESOURCE_URL . "/images/thumb-20.png";
+                        }
+                        ?>" alt="logo">
         </div>
     </a>
     <div class="company-info">

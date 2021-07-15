@@ -27,11 +27,21 @@ $company = $data['company'];
             <div id="main-content">
                 <div class="main-content-div" id="basic-info-div">
                     <div id="background-avatar">
-                        <img src="<?php _url($company['bg_image_url']) ?>">
+                        <img src="<?php if (isset($company['bg_image_url'])) {
+                                        _url($company['bg_image_url']);
+                                    } else {
+                                        echo $RESOURCE_URL . "/images/img-29.jpg";
+                                    }
+                                    ?>">
                     </div>
 
                     <div id="main-avatar">
-                        <img src="<?php _url($company['logo_url']) ?>">
+                        <img src="<?php if (isset($company['logo_url'])) {
+                                        _url($company['logo_url']);
+                                    } else {
+                                        echo $RESOURCE_URL . "/images/thumb-20.png";
+                                    }
+                                    ?>">
                         <a class="edit-company" href="/MVCExample/Company/edit/<?= _e($company['id']) ?>"><i class="fas fa-pencil-alt"></i></a>
                     </div>
 
@@ -120,7 +130,12 @@ $company = $data['company'];
                 foreach ($companies as $c) { ?>
                     <a class="suggest__link" href="/MVCExample/Company/detail/<?= _e($c['id']) ?>">
                         <div class="suggest__info">
-                            <img class="suggest__info__avatar" src="<?php _url($c['logo_url']) ?>">
+                            <img class="suggest__info__avatar" src="<?php if (isset($c['logo_url'])) {
+                                                                        _url($c['logo_url']);
+                                                                    } else {
+                                                                        echo $RESOURCE_URL . "/images/thumb-20.png";
+                                                                    }
+                                                                    ?>">
                             <h4 class="suggest__info__name"><?php _e($c['name']) ?></h4>
                         </div>
                     </a>

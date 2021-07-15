@@ -1,5 +1,8 @@
 <?php
 $RESOURCE_URL = '/MVCExample/resources';
+$companyNameErrors = [];
+$companyWebsiteErrors = [];
+$companySizeErrors = [];
 
 if (isset($data['successMessage'])) {
     $successMessage = $data['successMessage'];
