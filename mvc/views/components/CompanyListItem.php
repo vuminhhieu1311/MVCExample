@@ -22,10 +22,8 @@
             </button>
         </a>
         <button class="button-delete">
-            <a href="/MVCExample/Company/delete/<?= _e($company['id']) ?>" style="text-decoration:none;color:white;">
-                Delete
-                <i class="far fa-trash-alt"></i>
-            </a>
+            Delete
+            <i class="far fa-trash-alt"></i>
         </button>
     </div>
 </li>

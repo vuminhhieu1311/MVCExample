@@ -74,7 +74,9 @@ class Company extends Controller
 
             $result = $this->companyModel->deleteCompany($companyId);
             if($result === 1) {
-                header("location: /MVCExample/CompanyList");
+                echo "You have deleted this profile successfully!";
+            } else {
+                echo "An error occurs while you are trying to delete this profile";
             }
         }
     }

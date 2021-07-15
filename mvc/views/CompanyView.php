@@ -45,8 +45,8 @@ $company = $data['company'];
                         </div>
                     </div>
 
-                    <div id="basic-info-follow" class="add-job">
-                        <a href="/MVCExample/Company/delete/<?= _e($company['id']) ?>" style="color:white;">Delete Profile</a>
+                    <div id="basic-info-follow" class="add-job delete-button">
+                        Delete Profile
                     </div>
 
                     <div id="basic-info-nav">
@@ -139,6 +139,18 @@ $company = $data['company'];
             </div>
         </div>
     </main>
+    <script>
+        $(document).ready(function() {
+            $('.delete-button').click(function() {
+                var id = <?= _e($company['id']) ?>
+
+                $.get(`/MVCExample/Company/delete/${id}`, {}, function(data) {
+                    window.location.href = "/MVCExample/CompanyList";
+                    alert(data);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
