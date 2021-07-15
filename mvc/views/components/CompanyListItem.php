@@ -1,4 +1,4 @@
-<li class="company" style="width: 550px">
+<li class="company">
     <a href="Company/detail/<?= _e($company['id']) ?>">
         <div class="company-logo">
             <img src="<?= _e($company['logo_url']) ?>" alt="logo">

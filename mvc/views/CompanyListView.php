@@ -1,6 +1,5 @@
 <?php
-require_once("mvc/core/ResourceFile.php")
-?>
+require_once 'mvc/core/ResourceFile.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,12 +11,13 @@ require_once("mvc/core/ResourceFile.php")
 
     <?php require_once './mvc/views/components/CssLink.php'; ?>
     <link rel="stylesheet" href="<?= $RESOURCE_URL ?>/css/company-list.css">
+    <script src="<?= $RESOURCE_URL ?>/js/company-list.js" defer></script>
 </head>
 
 <body>
     <?php require_once './mvc/views/components/Header.php'; ?>
     <main>
-        <ul class="company-list" style="margin-left: -4%">
+        <ul class="company-list">
             <?php
             $companies = $data['companies'];
             foreach ($companies as $company) {

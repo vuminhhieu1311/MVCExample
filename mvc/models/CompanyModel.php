@@ -36,6 +36,33 @@ class CompanyModel
         return $company;
     }
 
+    public function createCompany(
+        string $name,
+        string $website,
+        string $industry,
+        int $companySize,
+        string $companyType,
+        string $tagline
+    ): int {
+        $query = '
+        insert into companies(name, website, industry, company_size, company_type, tagline)
+        value (?, ?, ?, ?, ?, ?)
+        ';
+        $statement = $this->connection->prepare($query);
+        $statement->bind_param(
+            'sssiss',
+            $name,
+            $website,
+            $industry,
+            $companySize,
+            $companyType,
+            $tagline
+        );
+        $statement->execute();
+
+        return $statement->affected_rows;
+    }
+
     public function updateCompany(
         int $companyId,
         string $name,
